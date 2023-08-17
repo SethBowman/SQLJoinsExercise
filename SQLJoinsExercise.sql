@@ -45,6 +45,12 @@ inner join products as p
 on r.ProductID = p.ProductID
 where p.Name like "%Visio%" and r.Rating = 1;
 
+
+SELECT p.Name as Product_Name, r.Reviewer, MIN(r.Rating) as Lowest_Rating, r.Comment as Reviewer_Comment
+FROM Products as p
+INNER JOIN Reviews as r
+ON p.ProductID = r.ProductID
+WHERE p.name like "%Visio TV%";
 -- ------------------------------------------ Extra - May be difficult
 /* Your goal is to write a query that serves as an employee sales report.
 This query should return:
